@@ -7,7 +7,7 @@ param appNameSuffix string = uniqueString(resourceGroup().id)
 @description('Storage account SKU name.')
 param storageSku string = 'Standard_LRS'
 
-var functionAppName = 'fn-${appNameSuffix}'
+var functionAppName = 'ComplimentGenerator-${appNameSuffix}'
 var appServicePlanName = 'FunctionPlan'
 var appInsightsName = 'AppInsights'
 var storageAccountName = 'fnstor${replace(appNameSuffix, '-', '')}'
