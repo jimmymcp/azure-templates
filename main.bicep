@@ -106,7 +106,7 @@ resource function 'Microsoft.Web/sites/functions@2020-12-01' = {
       disabled: false
       bindings: [
         {
-          name: 'req'
+          name: 'Request'
           type: 'httpTrigger'
           direction: 'in'
           authLevel: 'anonymous'
@@ -115,7 +115,7 @@ resource function 'Microsoft.Web/sites/functions@2020-12-01' = {
           ]
         }
         {
-          name: '$return'
+          name: 'Response'
           type: 'http'
           direction: 'out'
         }

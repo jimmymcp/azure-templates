@@ -1,7 +1,7 @@
 using namespace System.Net
 
 # Input bindings are passed in via param block.
-param($req, $TriggerMetadata)
+param($Request, $TriggerMetadata)
 
 $nouns = 'work with Business Central', 'contribution to scrum', 'attitude', 'teamwork', 'banter', 'work ethic', 'code', 'feedback'
 $adjectives = 'amazing', 'inspiring', 'great', 'funny', 'uplifting', 'invigorating', 'refreshing', 'fearless', 'creative', 'artistic', 'sincere'

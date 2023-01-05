@@ -5,7 +5,7 @@
     "_generator": {
       "name": "bicep",
       "version": "0.13.1.58284",
-      "templateHash": "8507496687553373718"
+      "templateHash": "11408693174145358717"
     }
   },
   "parameters": {
@@ -32,7 +32,7 @@
     }
   },
   "variables": {
-    "$fxv#0": "using namespace System.Net\r\n\r\n# Input bindings are passed in via param block.\r\nparam($req, $TriggerMetadata)\r\n\r\n$nouns = 'work with Business Central', 'contribution to scrum', 'attitude', 'teamwork', 'banter', 'work ethic', 'code', 'feedback'\r\n$adjectives = 'amazing', 'inspiring', 'great', 'funny', 'uplifting', 'invigorating', 'refreshing', 'fearless', 'creative', 'artistic', 'sincere'\r\n$sentences = 'Your {0} is {1}.', 'I admire your {0}. It''s {1}', 'I really appreciate your {1} {0}', '{1} {0}!', 'Your {1} {0} is a real boost to the team. Thanks!', 'We all value your {0}. It''s {1}!', 'How do you do it? Your {0} is {1}!'\r\n\r\n$body = ((Get-Random -InputObject $sentences) -f (Get-Random -InputObject $nouns), (Get-Random -InputObject $adjectives))\r\n\r\n# Associate values to output bindings by calling 'Push-OutputBinding'.\r\nPush-OutputBinding -Name Response -Value ([HttpResponseContext]@{\r\n    StatusCode = [HttpStatusCode]::OK\r\n    Body = $body\r\n})",
+    "$fxv#0": "using namespace System.Net\r\n\r\n# Input bindings are passed in via param block.\r\nparam($Request, $TriggerMetadata)\r\n\r\n$nouns = 'work with Business Central', 'contribution to scrum', 'attitude', 'teamwork', 'banter', 'work ethic', 'code', 'feedback'\r\n$adjectives = 'amazing', 'inspiring', 'great', 'funny', 'uplifting', 'invigorating', 'refreshing', 'fearless', 'creative', 'artistic', 'sincere'\r\n$sentences = 'Your {0} is {1}.', 'I admire your {0}. It''s {1}', 'I really appreciate your {1} {0}', '{1} {0}!', 'Your {1} {0} is a real boost to the team. Thanks!', 'We all value your {0}. It''s {1}!', 'How do you do it? Your {0} is {1}!'\r\n\r\n$body = ((Get-Random -InputObject $sentences) -f (Get-Random -InputObject $nouns), (Get-Random -InputObject $adjectives))\r\n\r\n# Associate values to output bindings by calling 'Push-OutputBinding'.\r\nPush-OutputBinding -Name Response -Value ([HttpResponseContext]@{\r\n    StatusCode = [HttpStatusCode]::OK\r\n    Body = $body\r\n})",
     "functionAppName": "[format('ComplimentGenerator-{0}', parameters('appNameSuffix'))]",
     "appServicePlanName": "FunctionPlan",
     "appInsightsName": "AppInsights",
@@ -144,7 +144,7 @@
           "disabled": false,
           "bindings": [
             {
-              "name": "req",
+              "name": "Request",
               "type": "httpTrigger",
               "direction": "in",
               "authLevel": "anonymous",
@@ -153,7 +153,7 @@
               ]
             },
             {
-              "name": "$return",
+              "name": "Response",
               "type": "http",
               "direction": "out"
             }
