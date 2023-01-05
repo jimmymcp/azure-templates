@@ -109,7 +109,7 @@ resource function 'Microsoft.Web/sites/functions@2020-12-01' = {
           name: 'req'
           type: 'httpTrigger'
           direction: 'in'
-          authLevel: 'function'
+          authLevel: 'anonymous'
           methods: [
             'get'
           ]
